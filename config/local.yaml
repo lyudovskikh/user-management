@@ -1,0 +1,26 @@
+database:
+  driverClass: org.h2.Driver
+  user: sa
+  password:
+  url: jdbc:h2:mem:test
+  properties:
+    charSet: UTF-8
+  validationQuery: "/* DataBase Health Check */ SELECT 1"
+  validationQueryTimeout: 3s
+
+swagger:
+  resourcePackage: com.lyudovskikh.user.management.controller
+  version: 1.0.0
+  title: User Management Service
+  contact: Dmitry Lyudovskikh
+  contactEmail: lyudovskikh.d.s@gmail.com
+
+server:
+  adminContextPath: /admin
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
